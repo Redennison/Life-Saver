@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="shortcut icon" href="/images/Logo.png" type="image/x-icon">
+    <title>Life Saver - <%= condition %></title>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-custom navbar-dark bg-danger" id="navbarCustom">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">
+                <img src="/images/Logo.png" alt="image" width="40" height="40" padding-bottom="10" class="d-inline-block align-text-top">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02"
+                aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/diagnose">
+                            <h1 class="fs-3">Diagnose</h1>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/treatment">
+                            <h1 class="fs-3">Treatment</h1>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <div class="container">
+        <br>
+
+        
+        <h1 class="text-center"><%= condition %></h1>
+
+        <div class="card text-light bg-secondary">
+            <div class="card-body">
+                <h5 class="card-title">Symptoms</h5>
+                <ul class="card-text" id="symptoms">
+                    <% for (let i=0; i<symptoms.length; i++) { %>
+                        <li><%= symptoms[i] %></li>
+                    <% } %>
+                <ul/>
+            </div>
+        </div>
+
+        <div class="card text-light bg-secondary">
+            <div class="card-body">
+                <h5 class="card-title">Treatment</h5>
+                <ul class="card-text" id="treatments">
+                    <% for (let i=0; i<treatment.length; i++) { %>
+                        <li><%= treatment[i] %></li>
+                    <% } %>
+                <ul/>
+            </div>
+        </div>
+
+        <div class="card text-dark bg-warning">
+            <div class="card-body">
+                <h5 class="card-title">Note:</h5>
+                <p class="card-text">
+                    Always make sure to perform an environment check (no fire, no wire, no gas, no glass). This will prevent you from being injured.
+                    <br><br>
+                    Before helping a victim, be sure to introduce yourself and <a href="https://en.wikipedia.org/wiki/Good_Samaritan_law#Consent" target="_blank">gain consent</a>. This may potentially protect you from a lawsuit under a <a href="https://en.wikipedia.org/wiki/Good_Samaritan_law" target="_blank">Good Samaritan law</a>.
+                <p/>
+            </div>
+        </div>
+
+
+    </div>
+
+    <script>
+        const treatments_replace = {
+            'CPR': '/treatment/cpr',
+            'EMS': '/treatment/ems',
+            'vitals': '/treatment/vitals',
+            'shock': '/treatment/shock',
+            'unconscious': '/treatment/unconsciousness',
+            'partially obstructed choking': '/treatment/partially_obstructed_choking',
+            'fully obstructed choking': '/treatment/fully_obstructed_choking',
+            'bandage': 'https://www.youtube.com/watch?v=Y1G8XQb0WBc',
+            'head bandage': 'https://www.youtube.com/watch?v=53MYuHDbg5E'
+        }
+        for (keyword in treatments_replace) {
+            document.getElementById('treatments').innerHTML = document.getElementById('treatments').innerHTML.replace(keyword, `<a href="${treatments_replace[keyword]}" target="_blank" class="link-info">${keyword}</a>`)
+        }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+</body>
+</html>

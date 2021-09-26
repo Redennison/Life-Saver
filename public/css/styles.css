@@ -1,0 +1,49 @@
+.element {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    background: #ce8888;
+    
+}
+
+form {
+    display: flex;
+    justify-content: center;
+}
+
+.form-control {
+    width: 90%;
+    max-width: 700px;
+}
+
+.card {
+    margin: 30px auto;
+    width: 90%;
+    max-width: 700px;
+    transition: 0.3s all;
+}
+
+.card:hover {
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
+}
+
+.card img {
+    max-width: 300px;
+    max-height: 300px;
+    margin: 10px auto;
+    border-radius: 10px;
+}
+
+.nav-item {
+    transition: 0.3s all;
+}
+
+.nav-item:hover{
+    color: #ffffff;
+    background-color: #ff0000; 
+    border-radius: 8px;
+}
+
+.btn-lg {
+    margin: 2vh;
+}
