@@ -18,6 +18,10 @@ app.get("/", (req, res) => {
     });
 });
 
+app.get("/start-up", (req, res) => {
+    return res.render('start-up')
+})
+
 app.get("/cpr", (req, res) => {
     return res.render('cpr');
 });
