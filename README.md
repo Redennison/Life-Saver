@@ -1,4 +1,4 @@
-# OHacksIO 2021
+# Life Saver
 
 This repo is for the [OHacksIO](https://ohacksio.org) hackathon.\
 From our [DevPost submission](https://devpost.com/software/life-saver-y907we):
