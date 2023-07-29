@@ -88,7 +88,6 @@ app.get("/search", (req, res) => {
     }
 
 
-    console.log(inputtedSymptoms)
     return res.render('search', {
         matchedConditions: sortedMatchedConditions,
         conditions: conditions,
